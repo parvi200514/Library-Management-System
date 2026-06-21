@@ -1,16 +1,10 @@
-from tkinter import *
+from src.login import Login
 
-root = Tk()
+print("Library Management System")
 
-root.title("Library Management System")
-root.geometry("800x500")
+login = Login()
 
-title = Label(
-    root,
-    text="Library Management System",
-    font=("Arial", 20, "bold")
-)
-
-title.pack(pady=50)
-
-root.mainloop()
+if login.authenticate("admin", "admin123"):
+    print("Login Successful")
+else:
+    print("Login Failed")
